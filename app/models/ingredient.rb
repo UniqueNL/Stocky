@@ -1,4 +1,7 @@
 class Ingredient < ApplicationRecord
+  belongs_to :category
+  belongs_to :location
+
   def self.order_by_name
     order(:name)
   end
