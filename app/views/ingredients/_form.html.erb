@@ -1,0 +1,21 @@
+<!-- app/views/ingredients/_form.html.erb -->
+
+<%= form_for @ingredient do |i| %>
+  <%= i.label :name %>
+  <%= i.text_field :name %>
+
+  <%= i.label :amount %>
+  <%= i.number_field :amount %>
+
+  <%= i.label :category_id %>
+  <%= i.collection_select(:category_id, Category.all, :id, :name) %>
+
+  <%= i.label :location_id %>
+  <%= i.collection_select(:location_id, Location.all, :id, :name) %>
+
+  <%= i.label :expire %>
+  <%= i.text_field :expire, "data-provide" => 'datepicker' %>
+
+  <!--if new record, button text is "create" , else it is "update"-->
+  <%= i.submit (@ingredient.new_record? ? "Create" : "Update") %>
+<% end %>

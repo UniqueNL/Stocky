@@ -3,3 +3,5 @@
 <p>Category: <%= @ingredient.category.name %></p>
 <p>Location: <%= @ingredient.location_id %></p>
 <p>Expires: <%= @ingredient.expire %></p>
+
+<%= link_to "[Edit]", edit_ingredient_path( @ingredient.id ) %>
