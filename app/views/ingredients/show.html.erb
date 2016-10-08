@@ -2,7 +2,7 @@
 
 <p>Category: <%= @ingredient.category.name %></p>
 <p>Location: <%= @ingredient.location.name %></p>
-<p>Expires: <%= @ingredient.expire %></p>
+<p>Expires: <%= @ingredient.expire.strftime("%d-%m-%Y") %></p>
 
 
 <%= link_to "[Edit]", edit_ingredient_path( @ingredient.id ) %>

@@ -19,17 +19,24 @@
       <div class="cell"></div>
       <div class="cell">
 
-        <div class="button--small-row"><img src=<%= asset_path 'knife-and-fork.png' %> <%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
+        <div class="button--small-row"><img src=<%= asset_path 'knife-and-fork.png' %> /> <%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
         <div class="button--small-row"><img src=<%= asset_path 'eye.png' %> /><%= link_to "SHOW", ingredient_path(ingredient.id) %></div>
       </div>
     </div>
   <% end %>
 
   <div class="expires">
+    <h3>Expires</h3>
     <% @ingredients.each do |ingredient| %>
-      <% if (ingredient.is_expired?) %>
-      <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
+      <% if (ingredient.expire < Date.today)%>
+        <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
       <% end %>
     <% end %>
-  </div>
+
+    <h3>Almost expires</h3>
+    <% @ingredients.each do |ingredient| %>
+      <% if ((ingredient.expire - 7) < Date.today)%>
+        <%= link_to ingredient.name, ingredient_path(ingredient.id)%><%= ingredient.expire.strftime("%d-%m-%Y")  %><br />
+      <% end %>
+    <% end %>
 </div>
