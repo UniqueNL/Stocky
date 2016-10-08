@@ -1,5 +1,6 @@
 <h1><%= @ingredient.name %></h1>
 
+<div class="modal-padding">
 <p>Category: <%= @ingredient.category.name %></p>
 <p>Location: <%= @ingredient.location.name %></p>
 <p>Expires: <%= @ingredient.expire.strftime("%d-%m-%Y") %></p>
@@ -8,3 +9,4 @@
 <%= link_to "[Edit]", edit_ingredient_path( @ingredient.id ) %>
 <%= link_to "[Delete]", ingredient_path( @ingredient.id ), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{@ingredient.name}&sort=re" %>
+</div>
