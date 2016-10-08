@@ -52,6 +52,10 @@ body {
   padding: 30px;
 }
 
+.clear {
+  clear: both;
+}
+
 header {
   margin-bottom: 30px;
 }
@@ -113,5 +117,39 @@ h1 {
   a {
     text-decoration: none;
     color: white;
+  }
+}
+
+
+
+.row {
+  width: 100%;
+  background: #eee;
+  display: flex;
+  flex-wrap: wrap;
+
+  .cell {
+    width: 100px;
+    padding: 10px;
+
+    &:nth-child(even) {
+      background: rgba(0,0,0,0.05);
+    }
+
+    &:nth-child(1) {
+      width: 160px;
+    }
+
+    &:nth-child(3) {
+      width: 60px;
+    }
+
+  }
+
+
+
+
+  &:nth-child(even) {
+    background: rgba(0,0,0,0.05)
   }
 }

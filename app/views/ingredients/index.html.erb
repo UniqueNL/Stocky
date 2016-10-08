@@ -1,6 +1,15 @@
 <h1>Ingredients</h1>
 
 <!-- Listing all items inside the ingredients. -->
-<% @ingredients.each do |ingredient| %>
-  <p><%= link_to ingredient.name, ingredient_path(ingredient.id) %><%=  ingredient.category.name  %><%=  ingredient.amount  %></p>
-<% end %>
+<div class="table">
+  <% @ingredients.each do |ingredient| %>
+    <div class="row">
+      <div class="cell"><%= link_to ingredient.name, ingredient_path(ingredient.id) %></div>
+      <div class="cell"><%=  ingredient.category.name  %></div>
+      <div class="cell"><%=  ingredient.amount  %></div>
+      <div class="cell"><%=  ingredient.location.name  %></div>
+      <div class="cell">Button</div>
+      <div class="cell">Button</div>
+    </div>
+  <% end %>
+</div>
