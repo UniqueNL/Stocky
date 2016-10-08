@@ -1,27 +1,19 @@
 <!-- app/views/ingredients/_form.html.erb -->
-
+<div class="form">
 <%= form_for @ingredient do |i| %>
+  <%= i.text_field :name, placeholder: "Insert name..."%><br />
+  <%= i.number_field :amount, placeholder: "Insert the amount..." %><br />
 
-<ul>
-  <% @ingredient.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-
-  <%= i.label :name %>
-  <%= i.text_field :name %><br />
-
-  <%= i.label :amount %>
-  <%= i.number_field :amount %><br />
-
-  <%= i.label :category_id %>
+  <%= i.label :category_id %>:<br/>
   <%= i.collection_select(:category_id, Category.all, :id, :name) %><br />
 
-  <%= i.label :location_id %>
+  <%= i.label :location_id %>:<br/>
   <%= i.collection_select(:location_id, Location.all, :id, :name) %><br />
 
-  <%= i.label :expire %>
-  <%= i.text_field :expire, "data-provide" => 'datepicker' %><br />
+  <%= i.label :expire%>s on:<br/>
+  <%= i.date_field :expire, "data-provide" => 'datepicker', placeholder: "Insert expiration date (d-m-Y)..." %><br />
 
   <!--if new record, button text is "create" , else it is "update"-->
-  <%= i.submit (@ingredient.new_record? ? "Create" : "Update") %><br />
+  <%= i.submit (@ingredient.new_record? ? "Add ingredient" : "Edit ingredient") %><br />
 <% end %>
+</div>
