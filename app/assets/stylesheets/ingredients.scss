@@ -258,6 +258,7 @@ h1 {
 .expire-table {
   width: 50%;
   font-size: 12px;
+  background: rgb(199, 80, 80);
 
   .toprow {
     background: rgb(199, 60, 60);
@@ -268,6 +269,13 @@ h1 {
   .expirerow {
     padding: 5px 10px;
     font-size: 11px;
+    background: rgb(199, 80, 80);
+    color: white;
+
+
+    a {
+      color: white;
+    }
   }
 }
 
