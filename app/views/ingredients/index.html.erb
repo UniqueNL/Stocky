@@ -18,8 +18,9 @@
       <div class="cell"><%=  ingredient.location.name  %></div>
       <div class="cell"></div>
       <div class="cell">
-        <div class="button--small-row">EDIT</div>
-        <div class="button--small-row">DELETE</div>
+
+        <div class="button--small-row"><%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}&sort=re" %></div>
+        <div class="button--small-row"><%= link_to "SHOW", ingredient_path(ingredient.id) %></div>
       </div>
     </div>
   <% end %>
@@ -27,7 +28,7 @@
   <div class="expires">
     <% @ingredients.each do |ingredient| %>
       <% if (ingredient.is_expired?) %>
-      <%= ingredient.name %>
+      <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
       <% end %>
     <% end %>
   </div>

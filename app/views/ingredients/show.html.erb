@@ -7,3 +7,4 @@
 
 <%= link_to "[Edit]", edit_ingredient_path( @ingredient.id ) %>
 <%= link_to "[Delete]", ingredient_path( @ingredient.id ), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{@ingredient.name}&sort=re" %>
