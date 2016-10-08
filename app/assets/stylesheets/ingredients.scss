@@ -41,10 +41,11 @@ body {
   margin: 0 auto;
   margin-top: 100px;
   width: 800px;
+  margin-bottom: 200px;
 }
 
 .modal-box {
-  width: 740px;
+  width: 800px;
   min-height: 300px;
   background: white;
   border-radius: 10px 10px 0px 0px;
@@ -59,6 +60,38 @@ header {
   margin-bottom: 30px;
   width: 40%;
   float: left;
+}
+
+.view-others {
+  float: right;
+  width: 40%;
+  text-align: right;
+
+  .button {
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.6);
+    color: black;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    position: relative;
+    top: -1px;
+  }
+
+  .button:active {
+    position: relative;
+    top: 1px;
+  }
 }
 
 h1 {
@@ -146,7 +179,7 @@ h1 {
     }
 
     &:nth-child(1) {
-      width: 160px;
+      width: 220px;
     }
 
     &:nth-child(2) {
@@ -165,7 +198,7 @@ h1 {
     }
 
     &:nth-child(5) {
-      width: 70px;
+      width: 100px;
       text-align: center;
     }
 
@@ -183,26 +216,57 @@ h1 {
     font-size: 12px;
     font-weight: bold;
     color: white;
-    background: #1a7eb7;
+    background: rgb(110, 110, 110);
   }
 
   .button--small-row {
-    font-size: 11px;
+    font-size: 10px;
     color: white;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
     font-weight: bold;
     display: inline-block;
     text-align: right;
     padding: 5px;
     border-radius: 3px;
+    margin-top: -3px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    img {
+      margin-left: 3px;
+    }
+
+    &:hover {
+      position: relative;
+      top: -1px;
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
   }
 }
 
 .expire-table {
   width: 50%;
   font-size: 12px;
-  
-  .toprow {
 
+  .toprow {
+    background: rgb(199, 60, 60);
+    color: white;
+    padding: 10px 10px;
   }
+
+  .expirerow {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+.expire-tables {
+  display: flex;
 }

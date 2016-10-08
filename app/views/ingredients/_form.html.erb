@@ -8,20 +8,20 @@
   <% end %>
 
   <%= i.label :name %>
-  <%= i.text_field :name %>
+  <%= i.text_field :name %><br />
 
   <%= i.label :amount %>
-  <%= i.number_field :amount %>
+  <%= i.number_field :amount %><br />
 
   <%= i.label :category_id %>
-  <%= i.collection_select(:category_id, Category.all, :id, :name) %>
+  <%= i.collection_select(:category_id, Category.all, :id, :name) %><br />
 
   <%= i.label :location_id %>
-  <%= i.collection_select(:location_id, Location.all, :id, :name) %>
+  <%= i.collection_select(:location_id, Location.all, :id, :name) %><br />
 
   <%= i.label :expire %>
-  <%= i.text_field :expire, "data-provide" => 'datepicker' %>
+  <%= i.text_field :expire, "data-provide" => 'datepicker' %><br />
 
   <!--if new record, button text is "create" , else it is "update"-->
-  <%= i.submit (@ingredient.new_record? ? "Create" : "Update") %>
+  <%= i.submit (@ingredient.new_record? ? "Create" : "Update") %><br />
 <% end %>
