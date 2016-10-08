@@ -26,10 +26,17 @@
   <% end %>
 
   <div class="expires">
+    <h3>Expires</h3>
     <% @ingredients.each do |ingredient| %>
-      <% if (ingredient.is_expired?) %>
-      <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
+      <% if (ingredient.expire < Date.today)%>
+        <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
       <% end %>
     <% end %>
-  </div>
+
+    <h3>Almost expires</h3>
+    <% @ingredients.each do |ingredient| %>
+      <% if ((ingredient.expire - 7) < Date.today)%>
+        <%= link_to ingredient.name, ingredient_path(ingredient.id)%><%= ingredient.expire.strftime("%d-%m-%Y")  %><br />
+      <% end %>
+    <% end %>
 </div>
