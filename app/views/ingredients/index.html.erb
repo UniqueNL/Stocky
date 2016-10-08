@@ -5,7 +5,7 @@
       <div class="toprow"><b>Expired products:</b></div>
       <% @ingredients.each do |ingredient| %>
         <% if (ingredient.expire < Date.today)%>
-          <div class="expirerow"><b><%= link_to ingredient.name, ingredient_path(ingredient.id) %></b> - <%= link_to "Search recipes of #{ingredient.name}", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
+          <div class="expirerow"><b><%= link_to ingredient.name, ingredient_path(ingredient.id) %></b> </div>
         <% end %>
       <% end %>
   </div>
@@ -13,7 +13,7 @@
       <div class="toprow"><b>Almost expired products (within 3 days):</b></div>
       <% @ingredients.each do |ingredient| %>
         <% if ((ingredient.expire - 3) < Date.today) && ((ingredient.expire)> Date.today)%>
-          <div class="expirerow"><%= link_to ingredient.name, ingredient_path(ingredient.id)%> - Expires on: <%= ingredient.expire.strftime("%d-%m-%Y")  %></div>
+          <div class="expirerow"><%= link_to ingredient.name, ingredient_path(ingredient.id)%> - Expires on: <%= ingredient.expire.strftime("%d-%m-%Y")  %> - <%= link_to "Search recipes of #{ingredient.name}", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
         <% end %>
       <% end %>
   </div>

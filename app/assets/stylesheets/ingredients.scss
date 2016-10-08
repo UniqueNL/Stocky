@@ -256,10 +256,13 @@ h1 {
 }
 
 .expire-table {
-  width: 50%;
+  width: 70%;
   font-size: 12px;
   background: rgb(199, 80, 80);
 
+  &:nth-child(1) {
+    width: 30%;
+  }
   .toprow {
     background: rgb(199, 60, 60);
     color: white;
