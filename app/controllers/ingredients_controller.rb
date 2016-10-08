@@ -8,8 +8,22 @@ class IngredientsController < ApplicationController
   end
 
   def edit
-
+    @ingredient = Ingredient.find(params[:id])
   end
+
+  def update
+    @ingredient = Ingredient.find( params[:id] )
+
+    ingredient_params = params.require( :ingredient ).permit(:name, :amount, :expire, :category_id, :location_id)
+
+    if @ingredient.update_attributes( ingredient_params )
+       redirect_to @ingredient
+    else
+       render 'edit'
+    end
+  end
+
+
 
   def new
     @ingredient = Ingredient.new
@@ -26,4 +40,6 @@ class IngredientsController < ApplicationController
       render 'new'
     end
   end
+
+
 end
