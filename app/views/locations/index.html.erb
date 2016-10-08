@@ -4,3 +4,6 @@
 <% @locations.each do |location| %>
   <p><%= link_to location.name, location_path(location.id) %></p>
 <% end %>
+
+<br>
+<%= link_to "+ Add a location", new_ingredient_path %>
