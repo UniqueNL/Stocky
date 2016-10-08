@@ -1,5 +1,23 @@
 <h1>Ingredients</h1>
 
+<div class="expire-tables">
+  <div class="expire-table">
+      <div class="toprow"><b>Expired products:</b></div>
+      <% @ingredients.each do |ingredient| %>
+        <% if (ingredient.expire < Date.today)%>
+          <div class="expirerow"><%= link_to ingredient.name, ingredient_path(ingredient.id) %></div>
+        <% end %>
+      <% end %>
+  </div>
+  <div class="expire-table">
+      <div class="toprow"><b>Almost expired products (within 3 days):</b></div>
+      <% @ingredients.each do |ingredient| %>
+        <% if ((ingredient.expire - 3) < Date.today)%>
+          <div class="expirerow"><%= link_to ingredient.name, ingredient_path(ingredient.id)%> - Expires on: <%= ingredient.expire.strftime("%d-%m-%Y")  %></div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
 <!-- Listing all items inside the ingredients. -->
 <div class="table">
   <div class="row">
@@ -19,28 +37,10 @@
       <div class="cell"><%=  ingredient.expire.strftime("%d-%m-%Y") %></div>
       <div class="cell">
 
-        <div class="button--small-row"><img src=<%= asset_path 'knife-and-fork.png' %> /> <%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
-        <div class="button--small-row"><img src=<%= asset_path 'eye.png' %> /><%= link_to "SHOW", ingredient_path(ingredient.id) %></div>
+        <div class="button--small-row"><%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
+        <div class="button--small-row"><%= link_to "SHOW", ingredient_path(ingredient.id) %></div>
       </div>
     </div>
   <% end %>
 
-
-
-</div>
-<div class="expire-table">
-    <div class="toprow"><b>Expired products:</b></div>
-    <% @ingredients.each do |ingredient| %>
-      <% if (ingredient.expire < Date.today)%>
-        <div class="expirerow"><%= link_to ingredient.name, ingredient_path(ingredient.id) %></div>
-      <% end %>
-    <% end %>
-</div>
-<div class="expire-table">
-    <b>Almost expired products (within 3 days):</b><br>
-    <% @ingredients.each do |ingredient| %>
-      <% if ((ingredient.expire - 3) < Date.today)%>
-        <%= link_to ingredient.name, ingredient_path(ingredient.id)%><%= ingredient.expire.strftime("%d-%m-%Y")  %><br />
-      <% end %>
-    <% end %>
 </div>
