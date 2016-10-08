@@ -1,6 +1,12 @@
 <!-- app/views/ingredients/_form.html.erb -->
 
 <%= form_for @ingredient do |i| %>
+
+<ul>
+  <% @ingredient.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+
   <%= i.label :name %>
   <%= i.text_field :name %>
 

@@ -2,6 +2,10 @@ class Ingredient < ApplicationRecord
   belongs_to :category
   belongs_to :location
 
+  validates :name, presence: true
+  validates :amount, presence: true
+  validates :expire, presence: true
+
   def self.order_by_name
     order(:name)
   end
