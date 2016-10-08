@@ -39,7 +39,7 @@
 <div class="expire-table">
     <b>Almost expired products (within 3 days):</b><br>
     <% @ingredients.each do |ingredient| %>
-      <% if ((ingredient.expire - 3) < Date.today)%>
+      <% if ((ingredient.expire - 3) < Date.today) && ((ingredient.expire)> Date.today)%>
         <%= link_to ingredient.name, ingredient_path(ingredient.id)%><%= ingredient.expire.strftime("%d-%m-%Y")  %><br />
       <% end %>
     <% end %>
