@@ -11,7 +11,7 @@ class Ingredient < ApplicationRecord
   end
 
   def self.order_by_category
-    order(:category)
+    joins(:category).order('categories.name')
   end
 
   def self.order_by_location
