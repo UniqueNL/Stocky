@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root "ingredients#index"
 
   resources :ingredients
+  resources :locations
+  
 end

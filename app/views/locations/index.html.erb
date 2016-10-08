@@ -1,0 +1,6 @@
+<h1>Locations</h1>
+
+<!-- Listing all items inside the ingredients. -->
+<% @locations.each do |location| %>
+  <p><%= link_to location.name, location_path(location.id) %></p>
+<% end %>
