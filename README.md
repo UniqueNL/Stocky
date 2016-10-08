@@ -10,5 +10,6 @@ Stocky is made to organize your ingredients at your place and see the expiration
 * Edit ingredients, locations and categories
 * Check the expiration dates
 * Check the almost expiration dates
+
 And more secret stuff we wanted to include.. but we ran out of time.
 
