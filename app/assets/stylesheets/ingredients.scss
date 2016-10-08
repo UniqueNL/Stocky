@@ -57,6 +57,8 @@ body {
 
 header {
   margin-bottom: 30px;
+  width: 40%;
+  float: left;
 }
 
 h1 {
@@ -147,8 +149,28 @@ h1 {
       width: 160px;
     }
 
+    &:nth-child(2) {
+      width: 70px;
+      text-align: center;
+    }
+
     &:nth-child(3) {
-      width: 60px;
+      width: 50px;
+      text-align: center;
+    }
+
+    &:nth-child(4) {
+      width: 70px;
+      text-align: center;
+    }
+
+    &:nth-child(5) {
+      width: 70px;
+      text-align: center;
+    }
+
+    &:nth-child(6) {
+      width: 170px;
     }
 
   }
@@ -173,5 +195,14 @@ h1 {
     text-align: right;
     padding: 5px;
     border-radius: 3px;
+  }
+}
+
+.expire-table {
+  width: 50%;
+  font-size: 12px;
+  
+  .toprow {
+
   }
 }
