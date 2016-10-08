@@ -2,14 +2,33 @@
 
 <!-- Listing all items inside the ingredients. -->
 <div class="table">
+  <div class="row">
+    <div class="cell">Name</div>
+    <div class="cell">Category</div>
+    <div class="cell">Amount</div>
+    <div class="cell">Location</div>
+    <div class="cell"></div>
+    <div class="cell">Actions</div>
+  </div>
   <% @ingredients.each do |ingredient| %>
     <div class="row">
       <div class="cell"><%= link_to ingredient.name, ingredient_path(ingredient.id) %></div>
       <div class="cell"><%=  ingredient.category.name  %></div>
       <div class="cell"><%=  ingredient.amount  %></div>
       <div class="cell"><%=  ingredient.location.name  %></div>
-      <div class="cell">Button</div>
-      <div class="cell">Button</div>
+      <div class="cell"></div>
+      <div class="cell">
+        <div class="button--small-row">EDIT</div>
+        <div class="button--small-row">DELETE</div>
+      </div>
     </div>
   <% end %>
+
+  <div class="expires">
+    <% @ingredients.each do |ingredient| %>
+      <% if (ingredient.is_expired?) %>
+      <%= ingredient.name %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

@@ -19,7 +19,7 @@ class Ingredient < ApplicationRecord
   end
 
   def is_expired?
-    date < Date.now
+    expire > Date.today
   end
 
   def is_almost_expired?

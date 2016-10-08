@@ -4,5 +4,6 @@
 <p>Location: <%= @ingredient.location.name %></p>
 <p>Expires: <%= @ingredient.expire %></p>
 
+
 <%= link_to "[Edit]", edit_ingredient_path( @ingredient.id ) %>
 <%= link_to "[Delete]", ingredient_path( @ingredient.id ), method: :delete, data: { confirm: "Are you sure?" } %>
