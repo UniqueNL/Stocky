@@ -39,9 +39,9 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    location_params = params.require( :location )
+    category_params = params.require( :category ).permit( :name )
 
-    @category = Category.new(location_params)
+    @category = Category.new(category_params)
 
     if @category.save
       redirect_to @category

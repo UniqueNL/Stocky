@@ -39,7 +39,8 @@ class LocationsController < ApplicationController
   end
 
   def create
-    location_params = params.require( :location )
+    location_params = params.require( :location ).permit( :name )
+
 
     @location = Location.new(location_params)
 
