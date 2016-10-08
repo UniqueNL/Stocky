@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :ingredients
   resources :locations
-  
+  resources :categories
+
 end

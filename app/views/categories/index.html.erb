@@ -1,0 +1,6 @@
+<h1>Categories</h1>
+
+<!-- Listing all items inside the ingredients. -->
+<% @categories.each do |category| %>
+  <p><%= link_to category.name, category_path(category.id) %></p>
+<% end %>
