@@ -19,7 +19,7 @@
       <div class="cell"></div>
       <div class="cell">
 
-        <div class="button--small-row"><img src=<%= asset_path 'knife-and-fork.png' %> <%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
+        <div class="button--small-row"><img src=<%= asset_path 'knife-and-fork.png' %> /> <%= link_to "VIEW RECIPES", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
         <div class="button--small-row"><img src=<%= asset_path 'eye.png' %> /><%= link_to "SHOW", ingredient_path(ingredient.id) %></div>
       </div>
     </div>
