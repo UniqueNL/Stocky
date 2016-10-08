@@ -1,3 +1,4 @@
+<div class="form">
 <%= form_for @location do |i| %>
   <%= i.label :name %>
   <%= i.text_field :name %>
@@ -5,3 +6,4 @@
   <!--if new record, button text is "create" , else it is "update"-->
   <%= i.submit (@location.new_record? ? "Create" : "Update") %>
 <% end %>
+</div>

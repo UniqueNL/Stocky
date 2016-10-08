@@ -5,7 +5,7 @@
       <div class="toprow"><b>Expired products:</b></div>
       <% @ingredients.each do |ingredient| %>
         <% if (ingredient.expire < Date.today)%>
-          <div class="expirerow"><b><%= link_to ingredient.name, ingredient_path(ingredient.id) %></b> - <%= link_to "Search recipes of #{ingredient.name}", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
+          <div class="expirerow"><b><%= link_to ingredient.name, ingredient_path(ingredient.id) %></b> - <%= link_to "Search recipes with #{ingredient.name}", "http://allrecipes.com/search/results/?wt=#{ingredient.name}" %></div>
         <% end %>
       <% end %>
   </div>

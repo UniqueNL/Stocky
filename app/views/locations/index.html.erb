@@ -1,5 +1,6 @@
 <h1>Locations</h1>
 
+<div class="modal-padding">
 <!-- Listing all items inside the ingredients. -->
 <% @locations.each do |location| %>
   <p><%= link_to location.name, location_path(location.id) %></p>
@@ -7,3 +8,4 @@
 
 <br>
 <%= link_to "+ Add a location", new_location_path %>
+</div>
