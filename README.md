@@ -13,3 +13,4 @@ Stocky is made to organize your ingredients at your place and see the expiration
 
 And more secret stuff we wanted to include.. but we ran out of time.
 
+![alt tag](http://res.cloudinary.com/ddpouudhk/image/upload/v1480005648/hackathon-stocky-sam-tjitske-jan_c1qtyq.png)
